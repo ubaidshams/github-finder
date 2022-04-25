@@ -1,0 +1,55 @@
+$c1: #00c9ff;
+$c2: #49e4ce;
+$c3: #92fe9d;
+
+.and-this-just-feels-like-spinning-plates {
+  width: 0.1px;
+  height: 0.1px;
+  border: 40px solid transparent;
+  border-radius: 0px;
+  animation: loader 0.9s ease-in infinite, spin 1.8s linear infinite;
+}
+.and-this-just-feels-like-spinning-plates::before {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  margin-left: -40px;
+  margin-top: -40px;
+  content: "";
+  height: 0.1;
+  width: 0.1;
+  border: 40px solid transparent;
+  border-radius: 0px;
+  transform: rotate(45deg);
+  animation: loader 0.9s ease-in infinite;
+}
+@keyframes loader {
+  0% {
+    border-bottom-color: transparent;
+    border-top-color: $c1;
+  }
+  25% {
+    border-left-color: transparent;
+    border-right-color: $c2;
+  }
+  50% {
+    border-top-color: transparent;
+    border-bottom-color: $c3;
+  }
+  75% {
+    border-right-color: transparent;
+    border-left-color: $c2;
+  }
+  100% {
+    border-bottom-color: transparent;
+    border-top-color: $c1;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
